@@ -1,8 +1,9 @@
 class Forest{
     constructor(){
         this.image = loadImage("images/this.forest");
-        this.animal1 = loadImage()
-        this.animal2 = loadImage()
+        this.animal1 = loadImage();
+        this.animal2 = loadImage();
+        this.monster1 = loadImage();
         
         
     }
@@ -32,6 +33,16 @@ class Forest{
     }
 
     spawnMonsters(){
+        if(frameCount%60 === 0){
+            var x = Math.round(Math.random(50,displayWidth-50));
+            monster =  createSprite(x,displayHeight-50);
+            var rand = Math.round(Math.random(1));
+            if(rand == 1){
+                monster.addImage(monster1);
+            monster.lifetime(30);
+            monster.scale = 1;
 
-    }
+        }
+     }
+ }
 }
